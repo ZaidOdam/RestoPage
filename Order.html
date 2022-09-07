@@ -5,78 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order | RestooPage</title>
+    <title>Order | RestoPage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <style>
     .nav-decoration {
         text-decoration: none !important;
     }
-
-    .logged{
+    
+    .logged {
         margin-top: 10%;
         margin-left: 10%;
     }
-
-    .logged h1{
+    
+    .logged h1 {
         font-size: 4rem;
     }
-
-    .logged h2{
+    
+    .logged h2 {
         font-size: 2.5rem;
     }
-
-    .down{
+    
+    .down {
         margin-top: 40%;
     }
-
-    .content{
+    
+    .content {
         display: none;
         width: 100%;
         height: 100%;
     }
-
-    .loader{
+    
+    .loader {
         height: 100vh;
         width: 100vw;
         overflow: hidden;
         background-color: #000;
-        position:absolute;
+        position: absolute;
     }
-
-    .loader>div{
+    
+    .loader>div {
         height: 100px;
         width: 100px;
         border: 10px solid #fefefe;
         border-top-color: #ff8c00;
-        position:absolute;
+        position: absolute;
         margin: auto;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         border-radius: 50%;
         animation: spin 1.5s infinite linear;
     }
-
-    @keyframes spin{
-        100%{
+    
+    @keyframes spin {
+        100% {
             transform: rotate(360deg);
         }
     }
-
 </style>
 
 <body class="logb">
     <div class="loader">
         <div></div>
-    </div> 
+    </div>
     <div class="content">
-        <nav class="flex-box">
+
+        <!--NavBar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <img class="navbar-brand img-size" src="images/hey.jpg" alt="logo.png">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Order.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- <nav class="flex-box">
             <div>
                 <img class="img-size" src="images/hey.jpg" alt="logo.png">
             </div>
@@ -89,7 +114,7 @@
                     <li><a href="Order.html" class="nav-decoration">Login</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav> -->
         <div class="sidenav">
             <div class="login-main-text">
                 <h2>Welcome to our place. You will find happiness and food here.</h2>
@@ -98,19 +123,19 @@
             </div>
         </div>
         <div class="main">
-            <div id="logged" class="logged col-md-8 col-sm-16">
-                <h1>Welcome :)</h1>
-                <h2 id="log_fullname"></h2>
+            <div id="logged" class="logged col-md-8 col-sm-12">
+                <h2>Welcome :)</h2>
+                <h3 id="log_fullname"></h3>
                 <div class="down">
                     <hr>
-                    <h5 id="log_uname"></h5>
+                    <h6 id="log_uname"></h6>
                     <button id="logout" class="btn btn-black">Logout</button>
                 </div>
             </div>
 
             <div id="not_logged" class="col-md-6 col-sm-12">
-                <div class="login-form form" id="form-content">
-                    <section class="form-login" id="form-login">
+                <div class="form" id="form-content">
+                    <section class="form-login login-form" id="form-login">
                         <div class="form-group">
                             <label>User Name</label>
                             <input type="text" class="form-control" id="loginname" placeholder="User Name">
@@ -124,22 +149,22 @@
                         <p class="message">Don't have an account? <a href="#form-register">Sign Up</a> </p>
                     </section>
 
-                    <section class="form-register" id="form-register">
+                    <section class="form-register register-form" id="form-register">
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" class="form-control" id="fullname" placeholder="Enter Full Name">
+                            <input type="text" class="form-control input-sm" id="fullname" placeholder="Enter Full Name">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                            <input type="text" class="form-control input-sm" id="email" placeholder="Enter Email">
                         </div>
                         <div class="form-group">
                             <label>User Name</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter User Name">
+                            <input type="text" class="form-control input-sm" id="username" placeholder="Enter User Name">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                            <input type="password" class="form-control input-sm" id="password" placeholder="Enter Password">
                         </div>
                         <button id="create" class="btn btn-black">Create</button>
                         <hr>
@@ -151,64 +176,67 @@
     </div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="script.js"></script>
-<script type="module">
-    // Import the functions you need from the SDKs you need
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.mAin.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
-    import {getDatabase,ref,set,child,get} from  "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
+    import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
-  
+
     // Your web app's Firebase configuration
     const firebaseConfig = {
-      apiKey: "AIzaSyDrQXrq65a-D18vQQ3Y0SiMkJx0A9IxwBo",
-      authDomain: "restopage-abc0e.firebaseapp.com",
-      databaseURL: "https://restopage-abc0e-default-rtdb.firebaseio.com",
-      projectId: "restopage-abc0e",
-      storageBucket: "restopage-abc0e.appspot.com",
-      messagingSenderId: "571859952324",
-      appId: "1:571859952324:web:353e1262a3ba6fc8c19f91"
+        apiKey: "AIzaSyDrQXrq65a-D18vQQ3Y0SiMkJx0A9IxwBo",
+        authDomain: "restopage-abc0e.firebaseapp.com",
+        databaseURL: "https://restopage-abc0e-default-rtdb.firebaseio.com",
+        projectId: "restopage-abc0e",
+        storageBucket: "restopage-abc0e.appspot.com",
+        messagingSenderId: "571859952324",
+        appId: "1:571859952324:web:353e1262a3ba6fc8c19f91"
     };
-  
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const db=getDatabase(app);
+    const db = getDatabase(app);
 
     // Registration Form
     //Refernceces
-    const name=document.getElementById('fullname');
-    const email=document.getElementById('email');
-    const username=document.getElementById('username');
-    const password=document.getElementById('password');
-    const create=document.getElementById('create');
+    const name = document.getElementById('fullname');
+    const email = document.getElementById('email');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const create = document.getElementById('create');
 
     //validation
-    function isEmptyOrSpace(str){
-        return (str===null || str.match(/^ *$/)!==null);
+    function isEmptyOrSpace(str) {
+        return (str === null || str.match(/^ *$/) !== null);
     }
 
-    function validation(){
-        let nameregex=/^[a-zA-Z ]+$/;
-        let emailregex= /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
-        let userregex= /^[a-zA-Z0-9]{5,}$/;
+    function validation() {
+        let nameregex = /^[a-zA-Z ]+$/;
+        let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
+        let userregex = /^[a-zA-Z0-9]{5,}$/;
 
-        if(isEmptyOrSpace(name.value) || isEmptyOrSpace(email.value) || isEmptyOrSpace(username.value) || isEmptyOrSpace(password.value)){
+        if (isEmptyOrSpace(name.value) || isEmptyOrSpace(email.value) || isEmptyOrSpace(username.value) || isEmptyOrSpace(password.value)) {
             alert("Don't keep any field empty");
             return false;
         }
 
-        if(!nameregex.test(name.value)){
+        if (!nameregex.test(name.value)) {
             alert('Name contains only alphabets ');
             return false;
         }
 
-        if(!emailregex.test(email.value)){
+        if (!emailregex.test(email.value)) {
             alert("Enter a valid email");
             return false;
         }
 
-        if(!userregex.test(username.value)){
+        if (!userregex.test(username.value)) {
             alert("Username can only be Alphanumeric\nusername should be atleast of 5 charachters");
             return false;
         }
@@ -216,63 +244,62 @@
     }
 
     //Registeration
-    function RegisterUser(){
-        if(!validation()){
+    function RegisterUser() {
+        if (!validation()) {
             return;
         }
-        const dbRef=ref(db);
-        
-        get(child(dbRef,"UsersList/"+username.value)).then((snapshot)=>{
-            if(snapshot.exists()){
-                alert("Account Already Exist");
-            }else{
-                set(ref(db,"UsersList/"+username.value),
-                {
-                    fullname: name.value,
-                    email: email.value,
-                    username: username.value,
-                    password: password.value
+        const dbRef = ref(db);
 
-                })
-                .then(()=>{
-                    alert("Account created successfully!\nNow you can LogIn using username and password");
-                    window.location="index.html";
-                })
-                .catch((error)=>{
-                    alert("Error: "+error);
-                })
+        get(child(dbRef, "UsersList/" + username.value)).then((snapshot) => {
+            if (snapshot.exists()) {
+                alert("Account Already Exist");
+            } else {
+                set(ref(db, "UsersList/" + username.value), {
+                        fullname: name.value,
+                        email: email.value,
+                        username: username.value,
+                        password: password.value
+
+                    })
+                    .then(() => {
+                        alert("Account created successfully!\nNow you can LogIn using username and password");
+                        window.location = "index.html";
+                    })
+                    .catch((error) => {
+                        alert("Error: " + error);
+                    })
             }
         });
     }
-    create.addEventListener("click",RegisterUser);
+    create.addEventListener("click", RegisterUser);
 
     //Login Form
     //Refernceces
-    const login_username=document.getElementById('loginname');
-    const login_password=document.getElementById('loginpass');
-    const login_btn=document.getElementById('login');
+    const login_username = document.getElementById('loginname');
+    const login_password = document.getElementById('loginpass');
+    const login_btn = document.getElementById('login');
 
-    function LogUser(){
-        const dbRef=ref(db);
-        get(child(dbRef,"UsersList/"+login_username.value)).then((snapshot)=>{
-            
-            if(snapshot.exists()){
-                let dbpass=snapshot.val().password;
-                if(dbpass==login_password.value){
+    function LogUser() {
+        const dbRef = ref(db);
+        get(child(dbRef, "UsersList/" + login_username.value)).then((snapshot) => {
+
+            if (snapshot.exists()) {
+                let dbpass = snapshot.val().password;
+                if (dbpass == login_password.value) {
                     login(snapshot.val());
-                }else{
+                } else {
                     alert("Username or password in invalid");
                 }
-            }else{
-               alert("Username or password in invalid");
+            } else {
+                alert("Username or password in invalid");
             }
         });
     }
-    login_btn.addEventListener("click",LogUser);
+    login_btn.addEventListener("click", LogUser);
 
-    function login(user){
-        sessionStorage.setItem('user',JSON.stringify(user));
-        window.location="index.html";
+    function login(user) {
+        sessionStorage.setItem('user', JSON.stringify(user));
+        window.location = "index.html";
 
         // keep logged in need to add
         // localStorage.setItem('keepLoggedIn','yes');
@@ -280,10 +307,10 @@
         // window.location='index.html';
     }
 
-    const logout_btn=document.getElementById('logout');
-    logout_btn.addEventListener("click",Signout);
+    const logout_btn = document.getElementById('logout');
+    logout_btn.addEventListener("click", Signout);
+    </script>
 
-</script>
 </body>
 
 </html>

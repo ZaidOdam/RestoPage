@@ -1,5 +1,6 @@
 $('.message a').click(function() {
-    $('section').animate({ height: "toggle", opacity: "toggle" }, 800, "linear")
+    // $('section').animate({ height: "toggle", opacity: "toggle" }, 800, "linear");
+    $('section').slideToggle(1000);
 });
 
 // session management
